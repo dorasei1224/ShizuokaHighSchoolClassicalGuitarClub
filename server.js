@@ -1,6 +1,6 @@
 const express = require('express'); // Import express
 const app = express(); // Create an Express app
-const port = 3000; // Port number
+const port = process.env.PORT || 3000; // Use environment variable PORT or default to 3000
 
 // Import the routers
 const calenderRouter = require('./routes/calender'); // Import the calender router
@@ -24,8 +24,8 @@ app.use('/calender', calenderRouter); // Use the calender router
 app.use('/attendance', attendanceRouter); // Use the attendance router
 app.use('/logout', logoutRouter); // Use the logout router
 
-app.listen(port, () => {
-  console.log('Server is running in http://localhost:' + port); // Print a message when the server is running
+app.listen(port, '0.0.0.0', () => {
+  console.log('Server is running on http://0.0.0.0:' + port); // Print a message when the server is running
 });
 
 
