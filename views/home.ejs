@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ギター部 - 部活管理システム</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>ギター部 <span id="username-display" style="display:none;"></span></h1>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> ホーム</a></li>
+                <li><a href="/calender"><i class="far fa-calendar-alt"></i> 予定表</a></li>
+                <li><a href="/music"><i class="fas fa-music"></i> 楽譜一覧</a></li>
+                <li><a href="/attendance"><i class="fas fa-exclamation-triangle"></i> 欠席・遅刻連絡</a></li>
+                <li><button id="logout-button" class="logout-button">ログアウト</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section id="today-events">
+            <h2><i class="far fa-calendar-check"></i> 今日の予定</h2>
+            <div id="today-event-list">
+                <!-- JavaScriptでGoogle Calendar APIから取得した今日の予定が挿入される -->
+                <p>予定を取得中...</p>
+            </div>
+        </section>
+        <section id="next-practice">
+            <h2><i class="far fa-calendar-plus"></i> 次回の練習予定</h2>
+            <div id="next-practice-event">
+                <!-- JavaScriptでGoogle Calendar APIから取得した次の練習予定が挿入される -->
+                <p>予定を取得中...</p>
+            </div>
+        </section>
+        <section id="unread-notifications">
+          <h2><i class="fa-solid fa-bell"></i> 連絡事項</h2>
+          <p>実装予定</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 静岡高校クラシックギター部</p>
+    </footer>
+    <script src="/script.js"></script>
+    <script src="https://kit.fontawesome.com/1bc8e5ae01.js" crossorigin="anonymous"></script>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('header nav ul');
+            const menuToggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

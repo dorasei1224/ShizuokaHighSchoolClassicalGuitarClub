@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>部活管理システム</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <h1>ギター部 <span id="username-display" style="display:none;"></span></h1>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i> ホーム</a></li>
+                <li><a href="/calender"><i class="far fa-calendar-alt"></i> 予定表</a></li>
+                <li><a href="/music"><i class="fas fa-music"></i> 楽譜一覧</a></li>
+                <li><a href="/attendance"><i class="fas fa-exclamation-triangle"></i> 欠席・遅刻連絡</a></li>
+                <li><button id="logout-button" class="logout-button">ログアウト</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="attendance-form">
+            <h2>欠席・遅刻・早退連絡フォーム</h2>
+            <form id="attendanceForm">
+                <div class="form-group">
+                    <label for="attendanceType">種類:</label>
+                    <select id="attendanceType" name="attendanceType" required>
+                        <option value="">選択してください</option>
+                        <option value="absence">欠席</option>
+                        <option value="late">遅刻</option>
+                        <option value="early">早退</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="attendanceDate">日付:</label>
+                    <input type="date" id="attendanceDate" name="attendanceDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="reason">理由:</label>
+                    <textarea id="reason" name="reason" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">送信</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 静岡高校クラシックギター部</p>
+    </footer>
+
+    <script src="/public/script.js"></script>
+    <script src="https://kit.fontawesome.com/1bc8e5ae01.js" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/api.js"></script> <!-- Google APIクライアントライブラリを読み込む -->
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('header nav ul');
+            const menuToggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

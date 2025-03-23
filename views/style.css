@@ -1,0 +1,498 @@
+/* 全体的なスタイル */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* より明るい背景色 */
+    color: #333;
+}
+
+.container {
+    width: 90%; /* 幅を広げる */
+    max-width: 1200px; /* 最大幅を設定 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 20px; /* 余白 */
+}
+
+/* ヘッダー */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* ユーザー名表示 */
+#username-display {
+    font-size: 18px; /* 少し大きく */
+    color: #333; /* 少し濃く */
+    margin-left: 10px; /* 少し右側にスペース */
+    font-weight: 500; /* 少し太く */
+}
+
+header nav {
+    display: flex;
+    
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header nav li {
+    margin-right: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* ログアウトボタン */
+.logout-button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #ff1a1a;
+}
+
+/* メインコンテンツ */
+main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* レスポンシブなカラム */
+    gap: 20px;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* より軽めの影 */
+}
+
+section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex; /* アイコンとテキストを横並びにする */
+    align-items: center; /* 垂直方向中央揃え */
+}
+
+section h2 i {
+    margin-right: 8px; /* アイコンとテキストの間隔 */
+    color: #007bff; /* アイコンの色 */
+}
+
+/* イベント情報 */
+.event-info {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    display: flex; /* アイコンとテキストを横並びにする */
+    align-items: center; /* 垂直方向中央揃え */
+}
+
+.event-info i {
+    margin-right: 5px; /* アイコンとテキストの間隔 */
+}
+
+/* 未読の連絡事項 */
+#unread-notifications {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#unread-notifications h2{
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+#unread-notifications h2 i {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: #777;
+}
+
+/* メディアクエリ */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header nav li {
+        margin-left: 10px;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f8f8f8;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+
+    .menu-toggle i {
+        font-size: 24px;
+    }
+
+    .menu-toggle.active i {
+        content: '\f00d'; /* FontAwesomeの×アイコン */
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* ログアウトページ */
+.logout-container {
+    max-width: 500px;
+    margin: 50px auto; /* 中央寄せ */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.logout-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.logout-container p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.logout-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.logout-button {
+    background-color: #dc3545; /* 赤色 */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c82333; /* 少し暗い赤色 */
+}
+
+.cancel-button {
+    background-color: #6c757d; /* グレー */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: #5a6268; /* 少し暗いグレー */
+}
+
+/* サインインページ */
+.signin-container {
+    max-width: 500px;
+    margin: 50px auto; /* 中央寄せ */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.signin-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.signin-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.signin-button:hover {
+    background-color: #0056b3;
+}
+
+.signin-container p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.signin-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signin-container a:hover {
+    text-decoration: underline;
+}
+
+/* サインアップページ */
+.signup-container {
+    max-width: 500px;
+    margin: 50px auto; /* 中央寄せ */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.signup-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.signup-button {
+    background-color: #28a745; /* 緑色 */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #218838; /* 少し暗い緑色 */
+}
+
+.signup-container p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.signup-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-container a:hover {
+    text-decoration: underline;
+}
+
+/* 予定表 */
+#calendar-section h2 { /* 見出しはそのまま */
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#calendar-section h2 i {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+/* イベントリスト */
+#event-list {
+    padding: 10px; /* 全体的な余白 */
+    /* コンテンツを中央に配置するためのスタイル */
+    max-width: 700px; /* 最大幅を設定 */
+    margin: 0 auto; /* 中央寄せ */
+}
+
+#event-list .event {
+    margin-bottom: 20px; /* イベント間の間隔 */
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* イベントセクションの背景色 */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+#event-list .event:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+#event-list .event h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* イベント情報 */
+.event-info {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.event-info i {
+    margin-right: 5px;
+}
+
+/* 欠席・遅刻・早退連絡フォーム */
+#attendance-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#attendance-form h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#attendance-form .form-group {
+    margin-bottom: 15px;
+}
+
+#attendance-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#attendance-form input[type="date"],
+#attendance-form select,
+#attendance-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* padding, border を含めてwidthを計算 */
+    font-size: 1em;
+}
+
+#attendance-form textarea {
+    resize: vertical; /* 縦方向のみリサイズ可能 */
+}
+
+#attendance-form .submit-button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#attendance-form .submit-button:hover {
+    background-color: #4cae4c;
+}
+
